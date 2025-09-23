@@ -12,41 +12,53 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Tailwind gray-100 */
+            background-color: #111827; /* Tailwind gray-900 */
+            /* Subtle blueprint grid background pattern */
+            background-image:
+                linear-gradient(rgba(55, 65, 81, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(55, 65, 81, 0.4) 1px, transparent 1px);
+            background-size: 20px 20px;
         }
+        
+        /* Animation for cards appearing on scroll */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll { opacity: 0; }
+        .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
         .day-card {
-            /* Smooth transitions for hover and other state changes */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(31, 41, 55, 0.6); /* gray-800 with transparency */
+            border: 1px solid #374151; /* gray-700 */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .day-card:hover {
-            /* Lifts the card up on hover for a 3D effect */
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .tag {
-            background-color: #e0e7ff; /* Indigo-200 */
-            color: #3730a3; /* Indigo-800 */
-            font-weight: 600;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.3); /* Blue glow */
         }
     </style>
 </head>
-<body class="p-4 sm:p-6 md:p-8">
+<body class="p-4 sm:p-6 md:p-8 text-gray-200">
     <div class="max-w-5xl mx-auto">
-        <header class="text-center mb-10">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Your 7-Day Journey to Master 3D Printing</h1>
-            <p class="mt-3 text-lg text-gray-600">A structured plan to take you from novice to confident creator.</p>
+        <header class="text-center mb-10 border-b border-gray-700 pb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Your 7-Day Journey to Master 3D Printing</h1>
+            <p class="mt-3 text-lg text-gray-400">A structured plan to take you from novice to confident creator.</p>
         </header>
         
         <main class="space-y-8">
             <!-- Day 1 -->
-            <div id="day-1" class="day-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <div id="day-1" class="day-card rounded-xl shadow-lg overflow-hidden animate-on-scroll">
                 <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start">
-                        <h2 class="text-2xl font-bold text-teal-700">Day 1: The Foundation – Basics of 3D Printing</h2>
-                    </div>
+                    <h2 class="text-2xl font-bold text-teal-400">Day 1: The Foundation – Basics of 3D Printing</h2>
                     <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
-                        <div class="text-gray-700 space-y-3">
-                            <p>Today is about understanding core concepts. 3D printing, or <span class="font-semibold text-teal-800">additive manufacturing</span>, builds objects layer by layer from a digital file.</p>
+                        <div class="text-gray-300 space-y-3">
+                            <p>Today is about understanding core concepts. 3D printing, or <span class="font-semibold text-teal-300">additive manufacturing</span>, builds objects layer by layer from a digital file.</p>
                             <ul class="list-disc list-inside space-y-2">
                                 <li>Study types of 3D printing (focus on FDM).</li>
                                 <li>Understand printer parts: Frame, Bed, Extruder, etc.</li>
@@ -59,39 +71,35 @@
             </div>
 
             <!-- Day 2 -->
-            <div id="day-2" class="day-card bg-white rounded-xl shadow-lg overflow-hidden">
-                 <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start">
-                        <h2 class="text-2xl font-bold text-sky-700">Day 2: Materials & Safety</h2>
-                    </div>
-                    <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
-                        <div class="text-gray-700 space-y-3">
-                            <p>Learn about the different plastics used for printing and crucial safety measures to protect yourself and your printer.</p>
-                             <ul class="list-disc list-inside space-y-2">
-                                <li>Filaments: PLA, ABS, PETG, TPU.</li>
-                                <li>Bed adhesion methods (tape, glue, heated bed).</li>
-                                <li>Safety: Hot nozzle, moving parts, ventilation.</li>
-                            </ul>
+            <div id="day-2" class="day-card rounded-xl shadow-lg overflow-hidden animate-on-scroll">
+                   <div class="p-6 md:p-8">
+                        <h2 class="text-2xl font-bold text-sky-400">Day 2: Materials & Safety</h2>
+                        <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
+                            <div class="text-gray-300 space-y-3">
+                                <p>Learn about the different plastics used for printing and crucial safety measures to protect yourself and your printer.</p>
+                                 <ul class="list-disc list-inside space-y-2">
+                                    <li>Filaments: PLA, ABS, PETG, TPU.</li>
+                                    <li>Bed adhesion methods (tape, glue, heated bed).</li>
+                                    <li>Safety: Hot nozzle, moving parts, ventilation.</li>
+                                </ul>
+                            </div>
+                            <img src="https://placehold.co/600x400/0ea5e9/ffffff?text=Filament+Spools" alt="Filament Spools" class="rounded-lg object-cover w-full h-full">
                         </div>
-                        <img src="https://placehold.co/600x400/0ea5e9/ffffff?text=Filament+Spools" alt="Filament Spools" class="rounded-lg object-cover w-full h-full">
                     </div>
-                </div>
             </div>
 
             <!-- Day 3 -->
-            <div id="day-3" class="day-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <div id="day-3" class="day-card rounded-xl shadow-lg overflow-hidden animate-on-scroll">
                 <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start">
-                        <h2 class="text-2xl font-bold text-indigo-700">Day 3: Intro to CAD & STL Files</h2>
-                    </div>
+                    <h2 class="text-2xl font-bold text-indigo-400">Day 3: Intro to CAD & STL Files</h2>
                     <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
-                        <div class="text-gray-700 space-y-3">
-                             <p>Dive into the world of 3D design. Learn how to create your own models or find existing ones to print.</p>
-                             <ul class="list-disc list-inside space-y-2">
-                                <li>3D Design Software (TinkerCAD, Fusion360).</li>
-                                <li>Understand the STL file format.</li>
-                                <li>Download free models from Thingiverse/Printables.</li>
-                            </ul>
+                        <div class="text-gray-300 space-y-3">
+                               <p>Dive into the world of 3D design. Learn how to create your own models or find existing ones to print.</p>
+                               <ul class="list-disc list-inside space-y-2">
+                                    <li>3D Design Software (TinkerCAD, Fusion360).</li>
+                                    <li>Understand the STL file format.</li>
+                                    <li>Download free models from Thingiverse/Printables.</li>
+                                </ul>
                         </div>
                         <img src="https://placehold.co/600x400/6366f1/ffffff?text=CAD+Interface" alt="CAD Software Interface" class="rounded-lg object-cover w-full h-full">
                     </div>
@@ -99,14 +107,12 @@
             </div>
             
             <!-- Day 4 -->
-            <div id="day-4" class="day-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <div id="day-4" class="day-card rounded-xl shadow-lg overflow-hidden animate-on-scroll">
                 <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start">
-                        <h2 class="text-2xl font-bold text-purple-700">Day 4: Slicing Software</h2>
-                    </div>
+                    <h2 class="text-2xl font-bold text-purple-400">Day 4: Slicing Software</h2>
                     <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
-                        <div class="text-gray-700 space-y-3">
-                            <p>Learn how a <span class="font-semibold text-purple-800">slicer</span> converts your 3D model (STL) into instructions (G-code) that the printer can understand.</p>
+                        <div class="text-gray-300 space-y-3">
+                            <p>Learn how a <span class="font-semibold text-purple-300">slicer</span> converts your 3D model (STL) into instructions (G-code) that the printer can understand.</p>
                             <ul class="list-disc list-inside space-y-2">
                                 <li>Install Cura or PrusaSlicer.</li>
                                 <li>Key settings: Layer height, infill, supports.</li>
@@ -119,19 +125,17 @@
             </div>
 
             <!-- Day 5 -->
-            <div id="day-5" class="day-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <div id="day-5" class="day-card rounded-xl shadow-lg overflow-hidden animate-on-scroll">
                 <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start">
-                        <h2 class="text-2xl font-bold text-pink-700">Day 5: First Print & Calibration</h2>
-                    </div>
+                    <h2 class="text-2xl font-bold text-pink-400">Day 5: First Print & Calibration</h2>
                     <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
-                        <div class="text-gray-700 space-y-3">
-                            <p>Time to get hands-on! Proper calibration, especially <span class="font-semibold text-pink-800">bed leveling</span>, is the key to a successful first print.</p>
-                             <ul class="list-disc list-inside space-y-2">
-                                <li>Learn why bed leveling matters.</li>
-                                <li>Print a test model like a calibration cube or Benchy.</li>
-                                <li>Observe for common issues (warping, stringing).</li>
-                            </ul>
+                        <div class="text-gray-300 space-y-3">
+                            <p>Time to get hands-on! Proper calibration, especially <span class="font-semibold text-pink-300">bed leveling</span>, is the key to a successful first print.</p>
+                               <ul class="list-disc list-inside space-y-2">
+                                    <li>Learn why bed leveling matters.</li>
+                                    <li>Print a test model like a calibration cube or Benchy.</li>
+                                    <li>Observe for common issues (warping, stringing).</li>
+                                </ul>
                         </div>
                         <img src="https://placehold.co/600x400/ec4899/ffffff?text=First+Print" alt="First 3D Print" class="rounded-lg object-cover w-full h-full">
                     </div>
@@ -139,18 +143,16 @@
             </div>
 
             <!-- Day 6 -->
-            <div id="day-6" class="day-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <div id="day-6" class="day-card rounded-xl shadow-lg overflow-hidden animate-on-scroll">
                 <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start">
-                        <h2 class="text-2xl font-bold text-rose-700">Day 6: Troubleshooting & Quality</h2>
-                    </div>
+                    <h2 class="text-2xl font-bold text-rose-400">Day 6: Troubleshooting & Quality</h2>
                     <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
-                        <div class="text-gray-700 space-y-3">
+                        <div class="text-gray-300 space-y-3">
                             <p>Your first prints won't be perfect. Learning to diagnose and fix problems is a crucial skill for any maker.</p>
-                             <ul class="list-disc list-inside space-y-2">
-                                <li>Fix bed adhesion, stringing, and layer shifting.</li>
-                                <li>Experiment with slicer settings for better quality.</li>
-                            </ul>
+                               <ul class="list-disc list-inside space-y-2">
+                                    <li>Fix bed adhesion, stringing, and layer shifting.</li>
+                                    <li>Experiment with slicer settings for better quality.</li>
+                                </ul>
                         </div>
                         <img src="https://placehold.co/600x400/f43f5e/ffffff?text=Troubleshooting" alt="Troubleshooting 3D Prints" class="rounded-lg object-cover w-full h-full">
                     </div>
@@ -158,19 +160,17 @@
             </div>
 
             <!-- Day 7 -->
-            <div id="day-7" class="day-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <div id="day-7" class="day-card rounded-xl shadow-lg overflow-hidden animate-on-scroll">
                 <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start">
-                        <h2 class="text-2xl font-bold text-orange-700">Day 7: Post-Processing & Beyond</h2>
-                    </div>
+                    <h2 class="text-2xl font-bold text-orange-400">Day 7: Post-Processing & Beyond</h2>
                     <div class="mt-4 grid md:grid-cols-2 gap-6 items-center">
-                        <div class="text-gray-700 space-y-3">
-                             <p>The print finishing is just the beginning. Learn how to clean up your prints and explore more advanced topics.</p>
+                        <div class="text-gray-300 space-y-3">
+                               <p>The print finishing is just the beginning. Learn how to clean up your prints and explore more advanced topics.</p>
                             <ul class="list-disc list-inside space-y-2">
-                                <li>Post-processing: sanding, painting, smoothing.</li>
-                                <li>Explore advanced filaments (wood, carbon-fiber).</li>
-                                <li>Print a useful object like a phone stand.</li>
-                            </ul>
+                                    <li>Post-processing: sanding, painting, smoothing.</li>
+                                    <li>Explore advanced filaments (wood, carbon-fiber).</li>
+                                    <li>Print a useful object like a phone stand.</li>
+                                </ul>
                         </div>
                         <img src="https://placehold.co/600x400/f97316/ffffff?text=Finishing+Touches" alt="Finished 3D Prints" class="rounded-lg object-cover w-full h-full">
                     </div>
@@ -178,6 +178,24 @@
             </div>
         </main>
     </div>
+
+    <!-- JavaScript for scroll animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
 </body>
 </html>
+
+
 
