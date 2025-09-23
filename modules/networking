@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day Networking Learning Journey</title>
+    <!-- Tailwind CSS for rapid UI development -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS for animations and specific styling -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c1427; /* Dark Blue */
+            /* Subtle circuit board background pattern */
+            background-image:
+                linear-gradient(rgba(0, 183, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 183, 255, 0.05) 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+        
+        /* Animation for cards appearing on scroll */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll { opacity: 0; }
+        .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+        .day-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(17, 24, 39, 0.7); /* gray-900 with transparency */
+            border: 1px solid #1f2937; /* gray-800 */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.3); /* Sky Blue glow */
+        }
+
+        /* Gradient styling for titles */
+        .day-card h2 {
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .network-title {
+            --tw-gradient-from: #0ea5e9; /* sky-500 */
+            --tw-gradient-to: #38bdf8; /* sky-400 */
+        }
+
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 text-gray-200">
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-10 border-b border-gray-800 pb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-white">🌐 7-Day Networking Learning Journey</h1>
+            <p class="mt-3 text-lg text-gray-400 max-w-3xl mx-auto">Your guide to understanding how data travels across the world, from fundamentals to practical setup.</p>
+        </header>
+        
+        <main class="space-y-8">
+            <!-- Day 1 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Day 1: Networking Fundamentals</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Understand the OSI and TCP/IP models.</li>
+                            <li>✓ Learn core concepts: packets, protocols, and ports.</li>
+                            <li>✓ Differentiate between LAN, WAN, and the Internet.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=OSI+Model" alt="OSI Model" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Day 2: Physical & Data Link Layers</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Explore different types of network cables (Ethernet, Fiber).</li>
+                            <li>✓ Learn the function of switches and MAC addresses.</li>
+                            <li>✓ Understand how data frames are built and transmitted.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=Network+Switch" alt="Network Switch" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 3 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Day 3: Network Layer & IP Addressing</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Understand the role of routers in directing traffic.</li>
+                            <li>✓ Learn the basics of IPv4, IPv6, and subnetting.</li>
+                            <li>✓ Practice calculating network and broadcast addresses.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=IP+Addressing" alt="IP Addressing" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Day 4: Transport & Application Layers</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Differentiate between TCP (reliable) and UDP (fast).</li>
+                           <li>✓ Learn about common protocols: HTTP, DNS, FTP, and DHCP.</li>
+                           <li>✓ See how your browser gets a webpage using these protocols.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=TCP+vs+UDP" alt="TCP vs UDP" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Day 5: Network Security Basics</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Understand the role of Firewalls in protecting a network.</li>
+                           <li>✓ Learn what a VPN is and how it provides privacy.</li>
+                           <li>✓ Discuss common threats like malware and phishing.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=Network+Firewall" alt="Network Firewall" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Day 6: Wireless Networking</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Learn about Wi-Fi standards (802.11ac, 802.11ax).</li>
+                           <li>✓ Understand the function of Wireless Access Points (WAPs).</li>
+                           <li>✓ Explore Wi-Fi security protocols like WPA2 and WPA3.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=Wi-Fi+Router" alt="Wi-Fi Router" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Day 7: Mini-Project - Home Network Setup</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Plan a simple home network layout.</li>
+                           <li>✓ Learn to configure a basic home router (change SSID, password).</li>
+                           <li>✓ Set up a secure Wi-Fi network and connect devices.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=Home+Network+Diagram" alt="Home Network Diagram" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonus Mini-Project -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold network-title">Bonus Mini-Project: Simple Messaging App</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Apply client-server architecture principles.</li>
+                           <li>✓ Use sockets and TCP for real-time, reliable communication.</li>
+                           <li>✓ Build a server to listen for and relay messages.</li>
+                           <li>✓ Create a client application to send and receive messages.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/0c1427/0ea5e9?text=Client-Server+Chat" alt="Client-Server Messaging App" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-800">
+             <h3 class="text-2xl font-bold text-white">Key Outcomes</h3>
+             <ul class="mt-4 max-w-2xl mx-auto text-gray-400 space-y-2">
+                <li>✓ Solid understanding of network models and protocols.</li>
+                <li>✓ Knowledge of network hardware like routers and switches.</li>
+                <li>✓ Practical ability to plan and configure a basic, secure home network.</li>
+             </ul>
+        </footer>
+    </div>
+
+    <!-- JavaScript for scroll animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>
+
