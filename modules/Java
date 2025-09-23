@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day OOPs Learning Journey with Java</title>
+    <!-- Tailwind CSS for rapid UI development -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS for animations and specific styling -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a09; /* Tailwind stone-950 */
+            /* Subtle background grid pattern */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* Animation for cards appearing on scroll */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll { opacity: 0; }
+        .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+        .day-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background-color: #1c1917; /* stone-900 */
+            border: 1px solid #44403c; /* stone-700 */
+        }
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(249, 115, 22, 0.2); /* Orange glow */
+        }
+
+        /* Gradient styling for titles */
+        .day-card h2 {
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .java-title {
+            --tw-gradient-from: #f97316; /* orange-500 */
+            --tw-gradient-to: #fb923c; /* orange-400 */
+        }
+
+        /* Styling for code blocks */
+        .code-container {
+            position: relative;
+        }
+        pre {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0c0a09; /* stone-950 */
+            color: #d6d3d1; /* stone-300 */
+            padding: 1.5rem;
+            border-radius: 0.75rem; /* 12px */
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            border: 1px solid #44403c; /* stone-700 */
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: #44403c; /* stone-700 */
+            color: #d6d3d1; /* stone-300 */
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #57534e; /* stone-600 */
+        }
+
+        pre .comment { color: #78716c; } /* stone-500 */
+        pre .keyword { color: #f472b6; } /* pink-400 */
+        pre .class-name { color: #60a5fa; } /* blue-400 */
+        pre .method { color: #a78bfa; } /* violet-400 */
+        pre .string { color: #a3e635; } /* lime-400 */
+        pre .number { color: #facc15; } /* yellow-400 */
+
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-10 border-b border-stone-800 pb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-100">📘 7-Day OOPs Learning Journey with Java</h1>
+            <p class="mt-3 text-lg text-slate-400 max-w-3xl mx-auto">A structured 7-day plan to master Object-Oriented Programming in Java, from fundamentals to a final project.</p>
+            <div class="mt-4 text-slate-500">
+                <span class="font-semibold text-slate-400">Mentor:</span> Atharv Pathak [AP]
+            </div>
+        </header>
+        
+        <main class="space-y-8">
+            <!-- Day 1 -->
+            <div class="day-card rounded-xl shadow-md animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold java-title">Day 1: Programming Fundamentals</h2>
+                    <ul class="mt-4 list-disc list-inside text-slate-300 space-y-2">
+                        <li>Learned variables, operators, loops, and conditionals.</li>
+                        <li>Practiced writing functions and simple problem-solving (factorial, prime, Fibonacci).</li>
+                    </ul>
+                    <div class="mt-6 code-container">
+                        <button class="copy-btn">Copy</button>
+<pre><code class="language-java"><span class="comment">// Day1Basics.java</span>
+<span class="keyword">public class</span> <span class="class-name">Day1Basics</span> {
+    <span class="keyword">static int</span> <span class="method">factorial</span>(<span class="keyword">int</span> n) { ... }
+
+    <span class="keyword">static boolean</span> <span class="method">isPrime</span>(<span class="keyword">int</span> n) { ... }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        System.out.println(<span class="string">"Factorial of 5 = "</span> + <span class="method">factorial</span>(<span class="number">5</span>));
+        System.out.println(<span class="string">"Is 13 prime? "</span> + <span class="method">isPrime</span>(<span class="number">13</span>));
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card rounded-xl shadow-md animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold java-title">Day 2: Functions & Recursion</h2>
+                    <ul class="mt-4 list-disc list-inside text-slate-300 space-y-2">
+                        <li>Explored modular programming with functions.</li>
+                        <li>Implemented recursion for factorial and Fibonacci.</li>
+                    </ul>
+                    <div class="mt-6 code-container">
+                        <button class="copy-btn">Copy</button>
+<pre><code class="language-java"><span class="comment">// Day2Functions.java</span>
+<span class="keyword">public class</span> <span class="class-name">Day2Functions</span> {
+    <span class="keyword">static int</span> <span class="method">factorialRec</span>(<span class="keyword">int</span> n) { ... }
+
+    <span class="keyword">static int</span> <span class="method">fibRec</span>(<span class="keyword">int</span> n) { ... }
+    
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        System.out.println(<span class="string">"Factorial(5) = "</span> + <span class="method">factorialRec</span>(<span class="number">5</span>));
+        System.out.println(<span class="string">"Fibonacci(6) = "</span> + <span class="method">fibRec</span>(<span class="number">6</span>));
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-card rounded-xl shadow-md animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold java-title">Day 3: Classes & Objects</h2>
+                     <ul class="mt-4 list-disc list-inside text-slate-300 space-y-2">
+                        <li>Learned about classes, objects, constructors, and methods.</li>
+                        <li>Implemented a Car class with attributes and methods.</li>
+                    </ul>
+                    <div class="mt-6 code-container">
+                        <button class="copy-btn">Copy</button>
+<pre><code class="language-java"><span class="keyword">class</span> <span class="class-name">Car</span> {
+    String brand, model;
+    <span class="keyword">void</span> <span class="method">drive</span>(<span class="keyword">int</span> km) { <span class="comment">/* method */</span> }
+}
+
+<span class="keyword">public class</span> <span class="class-name">Day3CarDemo</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        Car c1 = <span class="keyword">new</span> <span class="class-name">Car</span>(<span class="string">"Toyota"</span>, <span class="string">"Yaris"</span>, <span class="number">2020</span>);
+        c1.<span class="method">drive</span>(<span class="number">120</span>);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 4 -->
+            <div class="day-card rounded-xl shadow-md animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold java-title">Day 4: Encapsulation & Abstraction</h2>
+                     <ul class="mt-4 list-disc list-inside text-slate-300 space-y-2">
+                        <li>Studied access modifiers (private, public).</li>
+                        <li>Used getters & setters for data hiding.</li>
+                    </ul>
+                    <div class="mt-6 code-container">
+                        <button class="copy-btn">Copy</button>
+<pre><code class="language-java"><span class="keyword">class</span> <span class="class-name">BankAccount</span> {
+    <span class="keyword">private double</span> balance;
+
+    <span class="keyword">public double</span> <span class="method">getBalance</span>() { <span class="keyword">return</span> balance; }
+    <span class="keyword">public void</span> <span class="method">deposit</span>(<span class="keyword">double</span> amount) { ... }
+}
+
+<span class="keyword">public class</span> <span class="class-name">Day4BankDemo</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        BankAccount acct = <span class="keyword">new</span> <span class="class-name">BankAccount</span>(...);
+        acct.<span class="method">deposit</span>(<span class="number">250</span>);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-card rounded-xl shadow-md animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold java-title">Day 5: Inheritance</h2>
+                    <ul class="mt-4 list-disc list-inside text-slate-300 space-y-2">
+                        <li>Learned code reusability through inheritance.</li>
+                        <li>Implemented a Person class and extended it with Student.</li>
+                    </ul>
+                    <div class="mt-6 code-container">
+                        <button class="copy-btn">Copy</button>
+<pre><code class="language-java"><span class="keyword">class</span> <span class="class-name">Person</span> { <span class="comment">/* name, age */</span> }
+
+<span class="keyword">class</span> <span class="class-name">Student</span> <span class="keyword">extends</span> <span class="class-name">Person</span> {
+    String rollNo;
+    <span class="method">Student</span>(String name, <span class="keyword">int</span> age, String rollNo) {
+        <span class="keyword">super</span>(name, age);
+        <span class="keyword">this</span>.rollNo = rollNo;
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="day-card rounded-xl shadow-md animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold java-title">Day 6: Polymorphism</h2>
+                    <ul class="mt-4 list-disc list-inside text-slate-300 space-y-2">
+                        <li>Learned method overriding and runtime polymorphism using abstract classes.</li>
+                    </ul>
+                    <div class="mt-6 code-container">
+                        <button class="copy-btn">Copy</button>
+<pre><code class="language-java"><span class="keyword">abstract class</span> <span class="class-name">Shape</span> {
+    <span class="keyword">abstract double</span> <span class="method">area</span>();
+}
+<span class="keyword">class</span> <span class="class-name">Circle</span> <span class="keyword">extends</span> <span class="class-name">Shape</span> { ... }
+
+<span class="keyword">public class</span> <span class="class-name">Day6PolymorphismDemo</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        Shape s1 = <span class="keyword">new</span> <span class="class-name">Circle</span>(<span class="number">5</span>);
+        System.out.println(<span class="string">"Area: "</span> + s1.<span class="method">area</span>());
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 7 -->
+            <div class="day-card rounded-xl shadow-md animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold java-title">Day 7: Mini Project – Library Management</h2>
+                    <ul class="mt-4 list-disc list-inside text-slate-300 space-y-2">
+                        <li>Applied Encapsulation, Inheritance, and Polymorphism.</li>
+                        <li>Designed a Library system with Book, Member, and Library classes.</li>
+                    </ul>
+                    <div class="mt-6 code-container">
+                        <button class="copy-btn">Copy</button>
+<pre><code class="language-java"><span class="keyword">class</span> <span class="class-name">Book</span> { ... }
+<span class="keyword">class</span> <span class="class-name">Member</span> { ... }
+<span class="keyword">class</span> <span class="class-name">Library</span> {
+    <span class="keyword">private</span> Book[] books;
+    <span class="keyword">void</span> <span class="method">addBook</span>(Book b) { ... }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-stone-800">
+             <h3 class="text-2xl font-bold text-slate-100">Key Outcomes</h3>
+             <ul class="mt-4 max-w-2xl mx-auto text-slate-400 space-y-2">
+                <li>✓ Mastered OOP pillars (Encapsulation, Abstraction, Inheritance, Polymorphism).</li>
+                <li>✓ Learned how to design real-world systems in Java.</li>
+                <li>✓ Completed a mini project for portfolio demonstration.</li>
+             </ul>
+        </footer>
+    </div>
+
+    <!-- JavaScript for scroll animations and copy button functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Scroll animations
+            const cards = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            cards.forEach(card => observer.observe(card));
+
+            // Copy button functionality
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pre = button.nextElementSibling;
+                    const code = pre.querySelector('code');
+                    navigator.clipboard.writeText(code.innerText).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => {
+                            button.innerText = 'Copy';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
