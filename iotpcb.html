@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day IoT and PCB Design Journey</title>
+    <!-- Tailwind CSS for rapid UI development -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS for animations and specific styling -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Tech-inspired dark background with a circuit pattern */
+            background-color: #0c1427; /* Dark Blue */
+            background-image:
+                linear-gradient(rgba(0, 183, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 183, 255, 0.05) 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+        
+        /* Animation for cards appearing on scroll */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll { opacity: 0; }
+        .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+        /* Glassmorphism card effect */
+        .day-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(17, 24, 39, 0.7); /* gray-900 with transparency */
+            border: 1px solid #1f2937; /* gray-800 */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .day-card.iot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.3); /* Blue glow */
+        }
+        .day-card.pcb-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.3); /* Green glow */
+        }
+
+        /* Gradient styling for titles */
+        .day-card h2 {
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .iot-title {
+            --tw-gradient-from: #38bdf8; /* sky-400 */
+            --tw-gradient-to: #60a5fa; /* blue-400 */
+        }
+        .pcb-title {
+            --tw-gradient-from: #4ade80; /* green-400 */
+            --tw-gradient-to: #a3e635; /* lime-400 */
+        }
+
+        .module-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+        .iot-tag {
+            background-color: #1e3a8a; /* Blue-900 */
+            color: #bfdbfe; /* Blue-200 */
+            border: 1px solid #1d4ed8; /* Blue-700 */
+        }
+        .pcb-tag {
+             background-color: #14532d; /* Green-900 */
+             color: #bbf7d0; /* Green-200 */
+             border: 1px solid #16a34a; /* Green-600 */
+        }
+
+        /* Custom list items with SVG icons */
+        .custom-list-item {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem; /* 12px */
+        }
+        .custom-list-item svg {
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        .iot-icon { color: #60a5fa; } /* blue-400 */
+        .pcb-icon { color: #4ade80; } /* green-400 */
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 text-gray-300">
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-10 border-b border-gray-800 pb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-white">📘 7-Day Learning Journey of IoT and PCB design</h1>
+            <p class="mt-3 text-lg text-gray-400">From Microcontrollers to Circuit Boards in One Week</p>
+            <div class="mt-4 text-gray-500">
+                <span class="font-semibold text-gray-400">Mentors:</span> Rakesh Lande (RL), Rohan Khandar (RK), Tejas Tarankar (TT)
+            </div>
+        </header>
+        
+        <main class="space-y-8">
+            <!-- Day 1 -->
+            <div class="day-card iot-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <span class="module-tag iot-tag">IoT Module</span>
+                    <h2 class="text-2xl font-bold iot-title">Day 1: Introduction to IoT Hardware</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <p>Getting hands-on with the ESP8266 microcontroller and setting up the programming environment.</p>
+                            <div class="space-y-3">
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .48.359L11.115 3H14.5a.5.5 0 0 1 .5.5v2A.5.5 0 0 1 14.5 6h-1.885A2.5 2.5 0 0 1 10.5 8.5v1.268a2.5 2.5 0 0 1-2.115 2.485h-1.87A2.5 2.5 0 0 1 4.5 9.768V8.5A2.5 2.5 0 0 1 2.385 6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h3.385L4.52.359ZM6.5 1h3L10.115 3h-4.23L6.5 1Z"/><path d="M2.5 6.5A1.5 1.5 0 0 1 4 8v1.268a1.5 1.5 0 0 1-1.282 1.485H1.5a1.5 1.5 0 0 1-1.5-1.5V8A1.5 1.5 0 0 1 1.5 6.5h1Zm8 0A1.5 1.5 0 0 1 12 8v1.268a1.5 1.5 0 0 1-1.282 1.485h-1.435A1.5 1.5 0 0 1 8 9.768V8a1.5 1.5 0 0 1 1.5-1.5h1ZM5 8.5A1.5 1.5 0 0 1 6.5 7h3A1.5 1.5 0 0 1 11 8.5v1.268a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 5 9.768V8.5Z"/></svg>
+                                    <span><strong>ESP8266 Intro:</strong> Pinout, specs, and use cases.</span>
+                                </div>
+                                <div class="custom-list-item">
+                                     <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 3h-3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5Zm-3 1a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V4Zm0 3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V7Zm0 3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1Z"/><path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 13.5 1h-11ZM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11Z"/></svg>
+                                    <span><strong>Arduino IDE Setup:</strong> Installation and board configuration.</span>
+                                </div>
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1a.5.5 0 0 1 .5-.5zM6 8a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V8.5a.5.5 0 0 1 .5-.5zm-2-4.5A.5.5 0 0 1 4.5 3v1a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5zm-2 0A.5.5 0 0 1 2.5 3v1a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5zm-2 0A.5.5 0 0 1 .5 3v1a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5zm8 4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V7.5a.5.5 0 0 1 .5-.5zm-2 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V7.5a.5.5 0 0 1 .5-.5zm-2 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V7.5a.5.5 0 0 1 .5-.5zm14 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V7.5a.5.5 0 0 1 .5-.5zm-2 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V7.5a.5.5 0 0 1 .5-.5zm-2 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V7.5a.5.5 0 0 1 .5-.5z"/></svg>
+                                    <span><strong>First Program:</strong> Blinking internal and external LEDs.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://placehold.co/600x400/2563eb/ffffff?text=ESP8266+Board" alt="ESP8266 Microcontroller" class="rounded-lg object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card iot-card rounded-xl shadow-lg animate-on-scroll">
+                 <div class="p-6 md:p-8">
+                    <span class="module-tag iot-tag">IoT Module</span>
+                    <h2 class="text-2xl font-bold iot-title">Day 2: Wi-Fi & Web Servers</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <p>Connecting your device to the internet and controlling it remotely from a web browser.</p>
+                             <div class="space-y-3">
+                                 <div class="custom-list-item">
+                                     <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.384 6.115a.485.485 0 0 0-.047-.736C12.518 3.274 9.875 2.5 7 2.5s-5.518.774-8.337 2.879a.485.485 0 0 0-.047.736.48.48 0 0 0 .572.05A12.2 12.2 0 0 1 7 3.5c2.97 0 5.67.832 8.01 2.215a.48.48 0 0 0 .572-.05z"/><path d="M13.229 8.258a.482.482 0 0 0-.063-.745C11.316 6.024 9.252 5.5 7 5.5s-4.316.524-6.166 1.998a.482.482 0 0 0-.063.745.479.479 0 0 0 .61.054A10.12 10.12 0 0 1 7 6.5c2.188 0 4.13.443 5.786 1.229a.479.479 0 0 0 .61-.054zM11.072 10.4a.483.483 0 0 0-.08-.752C9.425 8.652 8.252 8.5 7 8.5s-2.425.152-4.002 1.148a.483.483 0 0 0-.08.752.479.479 0 0 0 .653.055A7.95 7.95 0 0 1 7 9.5c1.556 0 2.96.346 4.14.928a.479.479 0 0 0 .653-.055zm-2.14-2.14a.5.5 0 0 0-.108-.738C7.804 6.78 7.42 6.75 7 6.75s-.804.03-1.824.772a.5.5 0 0 0-.108.738.479.479 0 0 0 .68.06A5.9 5.9 0 0 1 7 7.75c.95 0 1.8.185 2.5.51a.479.479 0 0 0 .68-.06z"/></svg>
+                                     <span><strong>Wi-Fi Basics:</strong> Connecting the ESP8266 to a network.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.854a.5.5 0 0 0 .708 0L9 8.207l2.146 2.147a.5.5 0 0 0 .708-.708L9.707 7.5l2.147-2.146a.5.5 0 0 0-.708-.708L9 6.793 6.854 4.646a.5.5 0 0 0-.708.708L8.293 7.5 6.146 9.646a.5.5 0 0 0 0 .708z"/></svg>
+                                     <span><strong>IP Address Verification:</strong> Checking connectivity via Serial Monitor.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm15 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0zM10.97 4.97a.237.237 0 0 1 .03.04L13.48 10a.5.5 0 0 1-.416.75h-7.128a.5.5 0 0 1-.416-.75l2.48-5.03a.237.237 0 0 1 .03-.04zM8 5.731l-1.61 3.25h3.22L8 5.731z"/></svg>
+                                     <span><strong>Simple Web Server:</strong> Control an LED from a webpage.</span>
+                                 </div>
+                             </div>
+                        </div>
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Wi-Fi+Control" alt="Wi-Fi Web Server" class="rounded-lg object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-card iot-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <span class="module-tag iot-tag">IoT Module</span>
+                    <h2 class="text-2xl font-bold iot-title">Day 3: Interfacing with Sensors</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                             <p>Gathering real-world data with an ultrasonic sensor and displaying it live on a webpage.</p>
+                             <div class="space-y-3">
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                                    <span><strong>Ultrasonic Sensor Intro:</strong> Measuring distance accurately.</span>
+                                </div>
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12l3.414-3.414A3 3 0 0 1 5.828 10H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/><path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/></svg>
+                                    <span><strong>Serial Monitor:</strong> Printing live sensor readings.</span>
+                                </div>
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.478 1.647a.5.5 0 1 0-.956.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/></svg>
+                                    <span><strong>Live Data on Web:</strong> Real-time monitoring from a browser.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://placehold.co/600x400/60a5fa/ffffff?text=Ultrasonic+Sensor" alt="Ultrasonic Sensor" class="rounded-lg object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 4 -->
+            <div class="day-card iot-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <span class="module-tag iot-tag">IoT Module</span>
+                    <h2 class="text-2xl font-bold iot-title">Day 4: Mobile App Integration</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <p>Building a custom mobile application to interact with your IoT device from anywhere.</p>
+                            <div class="space-y-3">
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M5.854 5.146a.5.5 0 1 0-.708.708L7.293 8l-2.147 2.146a.5.5 0 0 0 .708.708L8 8.707l2.146 2.147a.5.5 0 0 0 .708-.708L8.707 8l2.147-2.146a.5.5 0 0 0-.708-.708L8 7.293 5.854 5.146z"/></svg>
+                                    <span><strong>Project Discussion:</strong> Brainstorming a mini IoT project.</span>
+                                </div>
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM5 1a2 2 0 0 0-2 2v5a2 2 0 0 1 2 2v4a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z"/></svg>
+                                    <span><strong>MIT App Inventor:</strong> Designing a simple mobile app.</span>
+                                </div>
+                                <div class="custom-list-item">
+                                    <svg class="iot-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1.5a.5.5 0 0 1-.658-.474V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zM2 2v1.572l3.5 3.5v4.928l2-1V7.072L11 3.572V2H2z"/></svg>
+                                    <span><strong>Integration:</strong> Testing data transfer and control with the ESP8266.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://placehold.co/600x400/93c5fd/ffffff?text=MIT+App+Inventor" alt="MIT App Inventor" class="rounded-lg object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-card pcb-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <span class="module-tag pcb-tag">PCB Designing</span>
+                    <h2 class="text-2xl font-bold pcb-title">Day 5: PCB Fundamentals & Schematics</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <p>Transitioning from breadboards to permanent circuits by learning the basics of Printed Circuit Board (PCB) design.</p>
+                             <div class="space-y-3">
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1 6.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1h-13zm0 3a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1h-13z"/></svg>
+                                     <span><strong>PCB Basics:</strong> Layers, traces, vias, and footprints.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM3 11.5A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm1.5.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zm4.5-1.5A1.5 1.5 0 0 1 10.5 9h1A1.5 1.5 0 0 1 13 10.5v1A1.5 1.5 0 0 1 11.5 13h-1A1.5 1.5 0 0 1 9 11.5v-1zm1.5.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1z"/></svg>
+                                     <span><strong>Schematic Design:</strong> Creating the blueprint for an AC to DC converter.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0V3H4v4.5a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5h8.5z"/><path d="M3.5 13a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/></svg>
+                                     <span><strong>Best Practices:</strong> Discussing real-world applications.</span>
+                                 </div>
+                             </div>
+                        </div>
+                        <img src="https://placehold.co/600x400/16a34a/ffffff?text=Circuit+Schematic" alt="Circuit Schematic" class="rounded-lg object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="day-card pcb-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <span class="module-tag pcb-tag">PCB Designing</span>
+                    <h2 class="text-2xl font-bold pcb-title">Day 6: PCB Layout & Routing</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <p>Turning a schematic into a physical board layout, placing components, and routing the connections.</p>
+                             <div class="space-y-3">
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
+                                     <span><strong>Schematic to Layout:</strong> Converting the AC-DC converter design.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.5,6.5L11.5,6.5c0,2.1-1.6,3.8-3.5,3.8h0c-1.9,0-3.5-1.7-3.5-3.8v0c0-2.1,1.6-3.8,3.5-3.8h0C9.9,2.7,11.5,4.4,11.5,6.5z M8,4.2c-1.1,0-2,1-2,2.3v0c0,1.3,0.9,2.3,2,2.3h0c1.1,0,2-1,2-2.3v0C10,5.2,9.1,4.2,8,4.2z"/><path d="M8,15.3c3.5,0,6.4-3.1,6.4-6.9v0c0-3.8-2.9-6.9-6.4-6.9h0C4.5,1.5,1.6,4.6,1.6,8.4v0C1.6,12.2,4.5,15.3,8,15.3z M8,3c2.7,0,4.9,2.5,4.9,5.4v0c0,2.9-2.2,5.4-4.9,5.4h0c-2.7,0-4.9-2.5-4.9-5.4v0C3.1,5.5,5.3,3,8,3z"/></svg>
+                                     <span><strong>Component Placement & Routing:</strong> Arranging parts and drawing traces.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                                     <span><strong>DRC:</strong> Running a Design Rule Check to avoid errors.</span>
+                                 </div>
+                             </div>
+                        </div>
+                        <img src="img/pcbprojectd.jpg" alt="PCB Layout" class="rounded-lg object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="day-card pcb-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <span class="module-tag pcb-tag">PCB Designing</span>
+                    <h2 class="text-2xl font-bold pcb-title">Day 7: Advanced Layout & Discussion</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                             <p>Applying layout skills to a new circuit and clarifying concepts for real-world implementation.</p>
+                            <div class="space-y-3">
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a.5.5 0 0 1 .5.5v1.293l6.646 6.647a.5.5 0 0 1-.708.708L8.5 3.707V8.5a.5.5 0 0 1-1 0V3.707L1.561 9.646a.5.5 0 1 1-.708-.708L7.5 2.293V1.5A.5.5 0 0 1 8 1z"/></svg>
+                                     <span><strong>New Project:</strong> Designing a DC motor speed controller schematic.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.293 8.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1-1.414 1.414L12 11.414V14.5a1 1 0 0 1-2 0v-3.086l-1.293 1.293a1 1 0 0 1-1.414-1.414l3-3zM5.707 5.707a1 1 0 0 1 0-1.414l3-3a1 1 0 0 1 1.414 1.414L8.586 4H11.5a1 1 0 0 1 0 2H8.586l1.293 1.293a1 1 0 0 1-1.414 1.414l-3-3z"/><path d="M1 4a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H2a1 1 0 0 1-1-1zm1 5a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H2a1 1 0 0 1-1-1zm2 3a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1z"/></svg>
+                                     <span><strong>Layout Practice:</strong> Converting the new schematic to a layout.</span>
+                                 </div>
+                                 <div class="custom-list-item">
+                                     <svg class="pcb-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                                     <span><strong>Q&A Session:</strong> Discussing simulation and implementation.</span>
+                                 </div>
+                            </div>
+                        </div>
+                       <img src="img/pcbproject.jpg" alt="DC Motor Controller PCB" class="rounded-lg object-cover w-full h-full">   </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript for scroll animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.animate-on-scroll');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target); // Stop observing after animation
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the card is visible
+            });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day Laser Cutting Learning Journey</title>
+    <!-- Tailwind CSS for rapid UI development -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS for animations and specific styling -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #171717; /* Neutral-900 */
+            /* Subtle honeycomb background pattern */
+            background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 0l14 8v16.5L14 33 0 24.5V8L14 0zm0 49l14-8V24.5L14 33 0 24.5V41l14 8z" fill="rgba(251, 146, 60, 0.04)"/></svg>');
+        }
+        
+        /* Animation for cards appearing on scroll */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll { opacity: 0; }
+        .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+        .day-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(38, 38, 38, 0.7); /* neutral-800 with transparency */
+            border: 1px solid #404040; /* neutral-700 */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(251, 146, 60, 0.3); /* Orange glow */
+        }
+
+        /* Gradient styling for titles */
+        .day-card h2 {
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .laser-title {
+            --tw-gradient-from: #fb923c; /* orange-400 */
+            --tw-gradient-to: #f97316; /* orange-500 */
+        }
+
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 text-gray-200">
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-10 border-b border-neutral-800 pb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-white">⚡ 7-Day Laser Cutting Learning Journey</h1>
+            <p class="mt-3 text-lg text-gray-400 max-w-3xl mx-auto">Your blueprint to mastering laser cutting, from digital design to physical creation.</p>
+            <div class="mt-4 text-gray-500">
+                <span class="font-semibold text-gray-400">Mentor:</span> Vansh Jaiswal [VJ]
+            </div>
+        </header>
+        
+        <main class="space-y-8">
+            <!-- Day 1 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold laser-title">Day 1: Intro & Applications</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ What is laser cutting?</li>
+                            <li>✓ Types of lasers (CO2, Fiber, Diode)</li>
+                            <li>✓ Common uses (wood, acrylic, etc.) & Safety basics</li>
+                            <li><strong>✅ Activity:</strong> List 5 laser-cut items you see around you.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/171717/fb923c?text=Laser+Cutting+in+Action" alt="Laser Cutting in Action" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold laser-title">Day 2: Hardware & Software</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Laser cutter parts (laser tube, bed, exhaust)</li>
+                            <li>✓ Software: LaserCad (or similar)</li>
+                            <li>✓ Vector vs Raster, file types (.svg, .dxf)</li>
+                            <li><strong>✅ Activity:</strong> Design a basic shape (e.g., a star or circle) in software.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/171717/fb923c?text=Vector+vs+Raster" alt="Vector vs Raster" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 3 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold laser-title">Day 3: Design Basics</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Cut vs. Engrave settings & line properties.</li>
+                            <li>✓ Design tips for creating press-fit joints.</li>
+                            <li>✓ Understanding kerf (the material removed by the laser).</li>
+                            <li><strong>✅ Activity:</strong> Design a small box with your initials engraved on top.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/171717/fb923c?text=Press-Fit+Box+Design" alt="Press-Fit Box Design" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold laser-title">Day 4: Materials & Settings</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Materials: wood, acrylic, paper, cardboard, etc.</li>
+                           <li>✓ How Power and Speed settings affect the outcome.</li>
+                           <li>✓ The importance of making test cuts.</li>
+                           <li><strong>✅ Activity:</strong> Run a speed/power test grid on a piece of cardboard.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/171717/fb923c?text=Material+Test+Grid" alt="Material Test Grid" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold laser-title">Day 5: Operating the Laser</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Focusing the laser, setting up the bed.</li>
+                           <li>✓ Importance of Air Assist and Exhaust systems.</li>
+                           <li>✓ Sending a file and running a job safely.</li>
+                           <li><strong>✅ Activity:</strong> Cut your first real design from Day 3.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/171717/fb923c?text=Laser+Control+Panel" alt="Laser Control Panel" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold laser-title">Day 6: Project Day</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Make something useful (phone stand, box, jewelry).</li>
+                           <li>✓ File preparation, nesting parts to save material.</li>
+                           <li>✓ Assembling your laser-cut project.</li>
+                           <li><strong>✅ Activity:</strong> Complete and document your project.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/171717/fb923c?text=Finished+Laser+Project" alt="Finished Laser Project" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="day-card rounded-xl shadow-lg animate-on-scroll">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-2xl font-bold laser-title">Day 7: Review & Maintenance</h2>
+                    <div class="mt-4 grid md:grid-cols-2 gap-8 items-center">
+                        <ul class="text-gray-300 space-y-2">
+                           <li>✓ Troubleshooting common issues (charring, incomplete cuts).</li>
+                           <li>✓ Basic maintenance: cleaning lenses and mirrors.</li>
+                           <li>✓ Showcase your project to others.</li>
+                           <li><strong>✅ Activity:</strong> Present your final work and reflect on the process.</li>
+                        </ul>
+                        <img src="https://placehold.co/600x300/171717/fb923c?text=Laser+Lens+Cleaning" alt="Laser Lens Cleaning" class="rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-neutral-800">
+             <h3 class="text-2xl font-bold text-white">Key Outcomes</h3>
+             <ul class="mt-4 max-w-2xl mx-auto text-gray-400 space-y-2">
+                <li>✓ Understand laser cutting principles, safety, and hardware.</li>
+                <li>✓ Ability to create and prepare vector designs for cutting and engraving.</li>
+                <li>✓ Safely operate a laser cutter and troubleshoot common issues.</li>
+             </ul>
+        </footer>
+    </div>
+
+    <!-- JavaScript for scroll animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>
+
